@@ -8,7 +8,7 @@
 
 ## 硬约束
 
-1. **决策语义唯一。** `Decision` 枚举与风险分是平台级契约，只能与 `rcp-contracts/contracts/schemas/decision.yaml`、`rcp-ontology/concepts/tbox.ttl` 的决策个体同批改；单方面加一个等级即 RL-003 红。
+1. **决策语义唯一。** `Decision` 枚举与风险分是平台级契约，只能与 `rcp-ontology/ontology/tbox/decisions.ttl`（唯一真源）及由它生成的 `rcp-contracts/contracts/schemas/decision.yaml` 同批改；单方面加一个等级即 RL-003 红。
 2. **保持零框架依赖。** 本库不引入 Spring、不引入 JDBC；一旦引入，所有服务被迫携带这些传递依赖，也让 RL-005 无法机械检查。
 3. **不兼容变更必须抬 minor 版本并打 tag。** 消费仓靠 tag 钉版，`main` 浮动会静默污染别人的构建。
 4. **不为单个服务加特例。** 需要特例的，说明是平台语义变了（走 1）或该服务自行实现。

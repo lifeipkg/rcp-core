@@ -25,5 +25,5 @@ mvn -B install -DskipTests   # 供本地其他仓依赖
 ## 版本约定
 
 - `1.0.x`：只加字段/加方法（兼容）；
-- `1.x.0`：语义变更（如新增决策等级、改风险分口径），必须与 `rcp-contracts` 的 `decision.yaml`、`rcp-ontology` 的 `concepts/tbox.ttl` 决策个体同批改；
+- `1.x.0`：语义变更（如新增决策等级、改风险分口径），必须与 `rcp-ontology/ontology/tbox/decisions.ttl`（唯一真源）、以及由它生成的 `rcp-contracts/contracts/schemas/decision.yaml` 同批改；
 - 打 tag `vX.Y.Z`，消费仓的 `core-ref` 显式抬版，禁止"改 core 不改消费仓"。
